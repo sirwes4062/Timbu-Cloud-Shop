@@ -1,0 +1,31 @@
+/* KRUB FOR TEXTS AND PARAGRAPH */
+@import url("https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+/* LIBRE BODONI FONT FAMILY FOR HEADERS */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap");
+
+h1,
+h2,
+h3 {
+  font-family: "Libre Bodoni", serif;
+}
+
+p,
+li {
+  font-family: "Krub", sans-serif;
+}
+
+:root {
+  --background-color: #f9f2e1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/********** OVERFLOW HIDDEN******* */
+.Container {
+  background-color: var(--background-color);
+  overflow: hidden;
+}
