@@ -27,7 +27,7 @@ const Footer = () => {
           <p>Home</p>
           <p>About-us</p>
           <p>Contact us</p>
-          <p>Products</p>
+          <p className="last-product"> Products</p>
         </div>
 
         <div className="categories">
@@ -38,13 +38,12 @@ const Footer = () => {
 
           <p>clothing and textiles</p>
 
-          <p>Reusable Eco-friendly products</p>
+          <p className="last-category">Reusable Eco-friendly products</p>
         </div>
 
         <div className="Resources">
           <h1>Resources</h1>
           <p>Privacy policy</p>
-
           <p>Terms and condition</p>
         </div>
 

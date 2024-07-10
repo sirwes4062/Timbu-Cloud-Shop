@@ -62,7 +62,6 @@
   display: flex;
 }
 
-
 /* media queries for various screen sizes */
 /* for tablet responsiveness */
 @media (max-width: 1240px) {
@@ -78,15 +77,11 @@
     padding: 1em;
   }
 
- 
-
-
   .categories {
     margin-right: 2em;
   }
 
-
-  .image-text{
+  .image-text {
     flex-direction: column;
   }
 
@@ -96,16 +91,39 @@
     line-height: 1.5em;
   }
 
-.background-image{
+  .background-image {
     height: 50em;
     justify-content: space-between;
-}
-
-
+  }
 }
 
 /* for mobile responsiveness */
 @media (max-width: 767px) {
+  .first {
+    margin-bottom: 2em;
+  }
+  .last-product {
+    margin-bottom: 2em;
+  }
+  .links h1 {
+    margin-bottom: 1em;
+  }
+
+  .categories h1 {
+    margin-bottom: 1em;
+  }
+  .last-category {
+    margin-bottom: 1em;
+  }
+
+  .Resources h1 {
+    margin-bottom: 1em;
+  }
+
+  .image-text {
+    display: flex;
+    margin: 0 12em;
+  }
 }
 
 @media (max-width: 640px) {
