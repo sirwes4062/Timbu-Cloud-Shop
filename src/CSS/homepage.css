@@ -25,6 +25,9 @@ li {
   z-index: 10;
   top: 80px;
 }
+.checking-out {
+  text-decoration: none;
+}
 
 .award {
   width: 25%;

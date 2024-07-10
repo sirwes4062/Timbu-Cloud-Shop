@@ -20,7 +20,7 @@ const CheckoutPage = () => {
           <div className="order-header-conunter">
             <h1>Order Summary</h1>
             <div className="number-cart">
-              <p>3</p>
+              <p>0</p>
             </div>
           </div>
 

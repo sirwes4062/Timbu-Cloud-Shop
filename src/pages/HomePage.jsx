@@ -114,7 +114,7 @@ const HomePage = () => {
 
             <hr className="horizontal-line" />
 
-            <Link to="/checkoutPage">
+            <Link to="/checkoutPage" className="checking-out">
               <div className="buy-now-button">
                 <h4>Check out</h4>
               </div>
