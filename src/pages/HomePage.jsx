@@ -24,9 +24,6 @@ import { HiOutlineTrash } from "react-icons/hi2";
 import { useContext } from "react";
 import { AppContext } from "../components/AppProvider";
 
-// image to test the cart
-// import five from "../images/five.png";
-
 import product from "../components/CartItems";
 
 import { Link } from "react-router-dom";
@@ -47,7 +44,6 @@ const HomePage = () => {
   const removeDropDown = () => {
     setCartdropdown(false);
   };
-
 
   const handleclick = (e) => {
     const addedProduct = e.target.id;

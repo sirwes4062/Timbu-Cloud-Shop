@@ -179,8 +179,16 @@ li {
   .serach-button {
     display: none;
   }
-  .navbar ul {
+
+  .search-button {
+    margin-right: 2em;
+  }
+
+  .shop-logo {
     display: none;
+  }
+  .home {
+    margin-right: 2em;
   }
 
   .hamburger {
@@ -197,5 +205,9 @@ li {
 @media (max-width: 640px) {
   .navbar {
     padding: 0.5em 1em;
+  }
+  .home {
+    margin-right: 1em;
+    margin-left: 1em;
   }
 }

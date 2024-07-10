@@ -3,11 +3,9 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { FiSearch } from "react-icons/fi";
 import { CgShoppingCart } from "react-icons/cg";
 import { IoPersonOutline } from "react-icons/io5";
-
 import { useContext } from "react";
 import { AppContext } from "./AppProvider";
 import { Link } from "react-router-dom";
-
 const Navbar = () => {
   const { cartdropdown, setCartdropdown } = useContext(AppContext);
 

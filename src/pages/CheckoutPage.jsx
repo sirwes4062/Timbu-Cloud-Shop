@@ -1,10 +1,17 @@
 import "../CSS/checkout.css";
 import { SlCalender } from "react-icons/sl";
 import { IoLockClosedOutline } from "react-icons/io5";
+import { useContext } from "react";
+import { AppContext } from "../components/AppProvider";
 
 const CheckoutPage = () => {
+  const { cartArray } = useContext(AppContext);
+  // setCartArray
+
   return (
+    // ////////
     <div className="Checkout-Container">
+      {/* //////////////// */}
       <div className="summary-and-info">
         <div className="home-paragraph">
           <p>Home</p>
@@ -17,7 +24,14 @@ const CheckoutPage = () => {
             <div className="number-cart">
               <p>3</p>
             </div>
+
+            {/* //////////// */}
+            {cartArray.map((item) => {
+              <div>{item.name}</div>;
+              console.log(item.name);
+            })}
           </div>
+          {/* /////////////// */}
 
           <div className="horizontal-summary"></div>
         </div>
