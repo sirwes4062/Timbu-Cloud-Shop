@@ -48,6 +48,7 @@ const HomePage = () => {
     setCartdropdown(false);
   };
 
+
   const handleclick = (e) => {
     const addedProduct = e.target.id;
     console.log(addedProduct);
@@ -87,9 +88,9 @@ const HomePage = () => {
               </div>
             </div>
 
-            {cartArray.map((item, id) => {
+            {cartArray.map((item) => {
               return (
-                <div className="item-name-increase" key={id}>
+                <div className="item-name-increase" key={item.id}>
                   <div className="image">
                     <img src={item.image} alt="" className="the-image" />
                   </div>

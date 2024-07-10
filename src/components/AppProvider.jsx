@@ -7,7 +7,6 @@ const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [cartdropdown, setCartdropdown] = useState(false);
-
   const [cartArray, setCartArray] = useState([]);
 
   return (
