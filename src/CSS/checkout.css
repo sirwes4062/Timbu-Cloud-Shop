@@ -184,13 +184,51 @@ form p {
   width: 0.6em;
   height: 0.6em;
   border-radius: 50%;
-
   background-color: #00522a;
 }
 
 .card-input p {
   font-size: 0.8em;
   font-weight: 500;
+}
+
+/* stylink for cart */
+.carted-image {
+  width: 3em;
+  height: 3em;
+  border-radius: 0;
+}
+
+.describe {
+  margin-bottom: 1em;
+  height: 100%;
+  margin-bottom: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.image-and-name {
+  display: flex;
+}
+
+.line {
+  width: 100%;
+  border-bottom: 1px solid#DDC596;
+}
+
+.price {
+  font-weight: 500;
+}
+
+.describe h1 {
+  font-size: 0.8em;
+}
+
+.carted-image-container {
+  display: flex;
+  width: 100%;
+
+  justify-content: space-between;
 }
 
 .inputer input {

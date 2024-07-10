@@ -9,9 +9,7 @@ const CheckoutPage = () => {
   // setCartArray
 
   return (
-    // ////////
     <div className="Checkout-Container">
-      {/* //////////////// */}
       <div className="summary-and-info">
         <div className="home-paragraph">
           <p>Home</p>
@@ -24,16 +22,32 @@ const CheckoutPage = () => {
             <div className="number-cart">
               <p>3</p>
             </div>
-
-            {/* //////////// */}
-            {cartArray.map((item) => {
-              <div>{item.name}</div>;
-              console.log(item.name);
-            })}
           </div>
-          {/* /////////////// */}
 
-          <div className="horizontal-summary"></div>
+          {/* CONTAINER FOR THE ADD TO CART IN CHECKOUT PAGE */}
+
+          {cartArray.map((item, id) => (
+            <div key={id} className="carted-image-container">
+              <div className="image-and-name">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="carted-image"
+                />
+
+                <div className="describe">
+                  <h1>{item.name}</h1>
+                  <h1>Color:Blue,Red and Black</h1>
+                </div>
+              </div>
+
+              <div className="price">
+                <h4>$244</h4>
+              </div>
+            </div>
+          ))}
+
+          {/*END OF CONTAINER FOR THE ADD TO CART IN CHECKOUT PAGE */}
         </div>
 
         <div className="info">
@@ -108,7 +122,6 @@ const CheckoutPage = () => {
           </form>
         </div>
       </div>
-
       <div className="payment-info">
         <h1>Payment information</h1>
 
