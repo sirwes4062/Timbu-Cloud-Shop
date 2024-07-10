@@ -75,7 +75,7 @@ const HomePage = () => {
             <div className="value-and-cross">
               <div className="value-name">
                 <h3>My Cart</h3>
-                <div className="product-number">3</div>
+                <div className="product-number">0</div>
               </div>
 
               {/* CROSS TO REMOVE CART DROOP DOWN */}
@@ -109,7 +109,7 @@ const HomePage = () => {
             <hr className="horizontal-line" />
             <div className="subtotal">
               <p>Subtotal</p>
-              <h3>$429.00</h3>
+              <h3>$0.00</h3>
             </div>
 
             <hr className="horizontal-line" />
