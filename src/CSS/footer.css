@@ -3,19 +3,24 @@
   display: flex;
   margin-top: 4em;
   align-items: center;
-}
-
-.background-image {
-  border-radius: 0;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
 }
 
 .image-text {
   position: absolute;
   display: flex;
   color: #ffffffe5;
-  width: 100%;
-  padding: 0 5em;
   justify-content: space-between;
+  width: 90%;
+  height: 100%;
+  padding-top: 2em;
+
+}
+
+.first {
+  line-height: 2em;
 }
 
 .first h1 {
@@ -40,100 +45,53 @@
   flex-direction: row;
 }
 
-.Resources {
-  margin-right: 3em;
-}
-
-.Resources,
-.categories,
 .links {
   line-height: 2.5em;
-}
-
-.resources-and-socialLinks {
-  display: flex;
-}
-
-.categories-resource-links {
-  display: flex;
 }
 
 .logo-and-links {
   display: flex;
 }
 
+.background-image {
+  border-radius: 0;
+}
+
 /* media queries for various screen sizes */
 /* for tablet responsiveness */
+
 @media (max-width: 1240px) {
-  .resources-and-socialLinks {
-    flex-direction: column;
+  .first {
+    line-height: 1.5em;
   }
 
-  .Resources {
-    margin-bottom: 2.5em;
-  }
-
-  .image-text {
-    padding: 1em;
-  }
-
-  .categories {
-    margin-right: 2em;
-  }
-
-  .image-text {
-    flex-direction: column;
-  }
-
-  .Resources,
-  .categories,
   .links {
     line-height: 1.5em;
   }
 
-  .background-image {
-    height: 50em;
-    justify-content: space-between;
+  .links h1 {
+    margin-bottom: 0.5em;
   }
 }
 
-/* for mobile responsiveness */
 @media (max-width: 767px) {
-  .first {
-    margin-bottom: 2em;
-  }
-  .last-product {
-    margin-bottom: 2em;
-  }
-  .links h1 {
-    margin-bottom: 1em;
+  .image-text {
+    flex-direction: column;
   }
 
-  .categories h1 {
-    margin-bottom: 1em;
-  }
-  .last-category {
-    margin-bottom: 1em;
-  }
-
-  .Resources h1 {
-    margin-bottom: 1em;
+  img {
+    width: max-content;
   }
 
   .image-text {
-    display: flex;
-    margin: 0 12em;
+    
+    border-radius: 0;
   }
 }
 
 @media (max-width: 640px) {
   .image-text {
-    display: flex;
-    margin-left: 7em;
-
-  }
-
-  .background-image {
-    width: 100vw;
+    height: 70%;
+    align-items: flex-start;
   }
 }

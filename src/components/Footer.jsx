@@ -9,6 +9,7 @@ const Footer = () => {
   return (
     <div className="image-container">
       <img src={footer} alt="Background Image" className="background-image" />
+
       <div className="image-text">
         <div className="first">
           <h1>Nature's Bounty</h1>
@@ -30,24 +31,6 @@ const Footer = () => {
           <p className="last-product"> Products</p>
         </div>
 
-        <div className="categories">
-          <h1>Categories</h1>
-          <p>Organic Food Products</p>
-
-          <p>Eco-friendly household products</p>
-
-          <p>clothing and textiles</p>
-
-          <p className="last-category">Reusable Eco-friendly products</p>
-        </div>
-
-        <div className="Resources">
-          <h1>Resources</h1>
-          <p>Privacy policy</p>
-          <p>Terms and condition</p>
-        </div>
-
-        {/* social media links */}
         <div className="social-media-links">
           <div className="link">
             <FaLinkedinIn />
