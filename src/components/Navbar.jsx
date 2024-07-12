@@ -41,6 +41,18 @@ const Navbar = () => {
             />
           </div>
 
+          {/* SEARCH BUTTON FOR MOBILE SCREEN */}
+          <div className="search-button-mobile">
+            <FiSearch className="search-icon-mobile" />
+            <input
+              type="text"
+              placeholder="search"
+              className="input-search-mobile"
+            />
+          </div>
+
+          {/* END OF SEARCH BUTTON FOR MOBILE SCREEN */}
+
           {/* BUTTON AT THE LEFT OF THE NAVBAR */}
           <div className="other-buttons">
             <div className="right-list">

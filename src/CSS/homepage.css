@@ -29,6 +29,11 @@ li {
   text-decoration: none;
 }
 
+/* //// */
+.product-page-anchor{
+  text-decoration: none;
+}
+
 .award {
   width: 25%;
   height: 2.3em;

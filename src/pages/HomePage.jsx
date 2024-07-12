@@ -149,9 +149,12 @@ const HomePage = () => {
         <p>consideration for the environment.</p>
       </div>
 
-      <div className="hero-paragraph2" onClick={scrollToProduct}>
-        <p>Discover Eco-Friendly Products</p>
-      </div>
+      <a href="#product-page" className="product-page-anchor">
+        <div className="hero-paragraph2">
+          <p>Discover Eco-Friendly Products</p>
+        </div>
+      </a>
+      {/* onClick={scrollToProduct} */}
 
       {/* IMAGE SLIDDER */}
       <ImageSlider />
@@ -213,7 +216,7 @@ const HomePage = () => {
       {/* END OF BROWSING THROUGH COLLECTION */}
 
       {/* POPULAR BEST SELLING PRODUTS */}
-      <div className="popular-container">
+      <div className="popular-container" id="product-page">
         <h1>Popular best selling products</h1>
 
         <p className="popular-paragraph">

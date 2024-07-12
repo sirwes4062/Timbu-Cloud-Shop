@@ -127,4 +127,13 @@
 }
 
 @media (max-width: 640px) {
+  .image-text {
+    display: flex;
+    margin-left: 7em;
+    /* background-color: red; */
+  }
+
+  .background-image {
+    width: 100vw;
+  }
 }

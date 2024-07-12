@@ -5,8 +5,16 @@ import { useContext } from "react";
 import { AppContext } from "../components/AppProvider";
 
 const CheckoutPage = () => {
-  const { cartArray } = useContext(AppContext);
-  // setCartArray
+  const { cartArray, radiotoggle, setRadiotoggle } = useContext(AppContext);
+
+  // radio toggle button function
+  const firstRadio = () => {
+    console.log("hi from first radio");
+  };
+
+  const secondRadio = () => {
+    console.log("hi from second radio");
+  };
 
   return (
     <div className="Checkout-Container">
@@ -131,17 +139,19 @@ const CheckoutPage = () => {
 
             <div className="radio-button">
               {/* first radio button */}
-              <div className="radio-button-click button1">
+              <div className="radio-button-click button1" onClick={firstRadio}>
                 <div className="inner-green"></div>
               </div>
               {/* end of first radio button */}
-              <div className="radio-check">
+              <div className="radio-check" onClick={secondRadio}>
                 <p>Debit or Credit Cardy</p>
               </div>
             </div>
             <div className="radio-button">
               {/* second radio button */}
-              <div className="radio-button-click button2"></div>
+              <div className="radio-button-click button2">
+                <div className="inner-green"></div>
+              </div>
               {/* end of second radio button */}
 
               <div className="radio-check">
