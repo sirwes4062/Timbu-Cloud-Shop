@@ -16,7 +16,6 @@
   width: 90%;
   height: 100%;
   padding-top: 2em;
-
 }
 
 .first {
@@ -79,12 +78,15 @@
     flex-direction: column;
   }
 
-  img {
+  /* img {
+  
+  } */
+
+  .background-image {
     width: max-content;
   }
 
   .image-text {
-    
     border-radius: 0;
   }
 }

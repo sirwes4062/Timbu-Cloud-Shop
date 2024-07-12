@@ -29,13 +29,7 @@ import product from "../components/CartItems";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
-  // SCROLL FUNCTIONALITY TO SCROLL DOWN THE PAGE TO THE PRODUCTS
-  const scrollToProduct = () => {
-    window.scrollTo({
-      top: 1950,
-      behaviour: "smooth",
-    });
-  };
+ 
 
   const { cartdropdown, setCartdropdown, cartArray, setCartArray } =
     useContext(AppContext);
