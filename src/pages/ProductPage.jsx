@@ -9,7 +9,6 @@ import { HiMinusSmall } from "react-icons/hi2";
 import { LiaStoreAltSolid } from "react-icons/lia";
 
 const ProductPage = () => {
-  // const { addToCart, clickedItem } = useContext(AppContext);
   const { dispatch } = useContext(AppContext);
 
   const { productId } = useParams();
