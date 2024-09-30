@@ -1,6 +1,4 @@
-/* KRUB FOR TEXTS AND PARAGRAPH */
 @import url("https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
-/* LIBRE BODONI FONT FAMILY FOR HEADERS */
 @import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap");
 
 h1,
@@ -15,8 +13,6 @@ li {
 }
 
 /* overlay,cart-container,homwpage container */
-
-/* //////////// */
 .homepage-container {
   position: relative;
 }
@@ -33,6 +29,7 @@ li {
   z-index: 100;
 }
 
+/* //////////////////////// */
 .cart-container {
   position: absolute;
   width: 35%;
@@ -40,14 +37,13 @@ li {
   padding: 2em 2em;
   z-index: 10000;
 }
+/* //////////////// */
 
-/* /////////// */
 .checking-out {
   text-decoration: none;
   width: 100%;
 }
 
-/* //// */
 .product-page-anchor {
   text-decoration: none;
 }
@@ -136,11 +132,6 @@ li {
 .feat:hover {
   border: 1px solid brown;
 }
-
-/* end of featured items */
-
-/* browsed items */
-
 .browse-collection {
   width: 80%;
   margin: auto;
@@ -198,7 +189,7 @@ li {
   margin-bottom: 2em;
 }
 
-/* ////////// */
+/*PRODUCT LISTS STYLING  */
 .popular-item {
   display: flex;
   padding: 0 5%;
@@ -208,32 +199,44 @@ li {
 }
 
 .popular-item img {
-  height: 17em;
+  width: 100;
+  cursor: pointer;
+  margin: auto;
+  border-radius: 15px;
 }
 
 .item {
   width: 15em;
+  margin-bottom: 2rem;
+  padding: 0.6rem 0.6rem 0 0.6rem;
+}
+
+.item-image {
+  margin-bottom: 1rem;
 }
 
 .item:hover {
-  border: 1px solid #572a00;
-  /* padding: 0.5em; */
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 4px;
-
-  border-radius: 10px;
+  border: 1.5px solid #572a00;
+  border-radius: 15px;
 }
 
 .name-and-price {
   display: flex;
   justify-content: space-between;
-  height: 3.5em;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .name-and-price h1 {
   font-size: 1em;
 }
+
+.item-name {
+  font-weight: 500;
+}
+
+/* END OF PRODUCT LISTS STYLING  */
+/* /////////////////////////////////////// */
 
 .cart-and-love {
   display: flex;
@@ -282,11 +285,6 @@ li {
   cursor: pointer;
 }
 
-.popular-item img {
-  width: 100%;
-  cursor: pointer;
-}
-
 .value-name {
   display: flex;
   width: 7em;
@@ -321,26 +319,25 @@ li {
   cursor: pointer;
 }
 
+.trash-icon {
+  display: flex;
+  align-items: center;
+}
+
+.cart-image {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
 .the-image {
-  width: 5em;
-  height: 5em;
-  border-radius: 0;
+  border-radius: 1em;
+  height: 90%;
+  width: 100%;
 }
 .name-increment h3 {
   font-size: 1em;
-}
-
-.name-increment {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-left: 1em;
-  width: 50%;
-}
-
-.item-name-increase {
-  display: flex;
-  margin-top: 1em;
 }
 
 .award {
@@ -362,39 +359,60 @@ li {
 
 .increment {
   width: 5em;
-  height: 1.5em;
+  height: 2em;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.381);
+  border: 1.5px solid #ddc596;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  cursor: pointe;
+  cursor: pointer;
 }
+
 .amount-and-delete {
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  width: 30%;
-  align-items: end;
-}
-
-.horizontal-line {
   width: 100%;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  background-color: #ddc596;
-  border: 1px solid #ddc596;
+  display: flex;
+  justify-content: space-between;
 }
 
+.name-increment {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.name-increment-amount-container {
+  width: 100%;
+  margin: auto;
+}
+
+.item-name-increase {
+  width: 100%;
+  display: flex;
+  margin-top: 0.5rem;
+  border-bottom: 1px solid #ddc596;
+}
 .subtotal {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  padding-bottom: 3rem;
+  padding-top: 0.5rem;
 }
 
 .subtotal p {
-  font-weight: 500;
+  font-weight: 400;
+}
+
+.subtotal-price {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .buy-now-button {
@@ -410,6 +428,12 @@ li {
 
 .buy-now-button:hover {
   background-color: #00522a79;
+}
+
+.empty-cart {
+  width: 100%;
+  text-align: center;
+  margin: 2rem 0 2rem 0;
 }
 
 /* media queries for various screen sizes */
@@ -448,7 +472,6 @@ li {
 
   .cart-container {
     width: 100%;
-    height: 100vh;
   }
 }
 

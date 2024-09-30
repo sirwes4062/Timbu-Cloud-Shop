@@ -7,18 +7,28 @@ import { useContext } from "react";
 import { AppContext } from "./AppProvider";
 import { Link } from "react-router-dom";
 const Navbar = () => {
-  const { cartdropdown, setCartdropdown } = useContext(AppContext);
+  const { cartdropdown, setCartdropdown, cart } = useContext(AppContext);
 
   const cartToggle = () => {
     setCartdropdown(!cartdropdown);
   };
+
+  const scrollToHeight = () => {
+    window.scrollTo({
+      top: 1800,
+      behavior: "smooth",
+    });
+  };
+
+  // destructuring Items from cart
+  const { Items } = cart;
 
   return (
     <div>
       <div className="container">
         <nav className="navbar">
           <div className="company-logo">
-            <h1>Nature's Bounty</h1>
+            <h1>Nature Bounty</h1>
           </div>
 
           <ul>
@@ -26,7 +36,10 @@ const Navbar = () => {
               <li>Home</li>
             </Link>
 
-            <div className="shop-logo">
+            <div
+              className="shop-logo"
+              style={{ cursor: "pointer" }}
+              onClick={scrollToHeight}>
               <li>Shop</li>
               <IoMdArrowDropdown className="shop-list-icon" />
             </div>
@@ -41,7 +54,6 @@ const Navbar = () => {
             />
           </div>
 
-          {/* SEARCH BUTTON FOR MOBILE SCREEN */}
           <div className="search-button-mobile">
             <FiSearch className="search-icon-mobile" />
             <input
@@ -51,23 +63,20 @@ const Navbar = () => {
             />
           </div>
 
-          {/* END OF SEARCH BUTTON FOR MOBILE SCREEN */}
-
-          {/* BUTTON AT THE LEFT OF THE NAVBAR */}
           <div className="other-buttons">
             <div className="right-list">
               <IoPersonOutline className="right-list-icon" />
             </div>
-
-            {/* ///////////// */}
-            <div className="right-list" onClick={cartToggle}>
+            <div
+              className="right-list  cart-icon-and-counter"
+              onClick={cartToggle}>
               <CgShoppingCart className="right-list-icon" />
+              <div className="cart-item-counter">
+                <h6>{Items.length}</h6>
+              </div>
             </div>
-            {/* ////////////// */}
           </div>
         </nav>
-
-        {/* mobile desi */}
       </div>
     </div>
   );

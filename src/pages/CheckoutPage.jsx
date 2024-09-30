@@ -1,20 +1,25 @@
 import "../CSS/checkout.css";
 import { SlCalender } from "react-icons/sl";
 import { IoLockClosedOutline } from "react-icons/io5";
+import { useState } from "react";
 import { useContext } from "react";
 import { AppContext } from "../components/AppProvider";
 
 const CheckoutPage = () => {
-  const { cartArray, radiotoggle, setRadiotoggle } = useContext(AppContext);
+  // RADIO-BUTTON CHECKING OPTIONS
+  const [selectedOption, setSelectedOption] = useState("");
 
-  // radio toggle button function
-  const firstRadio = () => {
-    console.log("hi from first radio");
+  const handleOptionChange = (e) => {
+    setSelectedOption(e.target.value);
   };
 
-  const secondRadio = () => {
-    console.log("hi from second radio");
-  };
+  const { cart } = useContext(AppContext);
+  const { Items } = cart;
+
+  const totalPrice = Items.reduce(
+    (accumulator, item) => accumulator + item.price,
+    0
+  );
 
   return (
     <div className="Checkout-Container">
@@ -28,13 +33,12 @@ const CheckoutPage = () => {
           <div className="order-header-conunter">
             <h1>Order Summary</h1>
             <div className="number-cart">
-              <p>0</p>
+              <p>{Items.length}</p>
             </div>
           </div>
 
           {/* CONTAINER FOR THE ADD TO CART IN CHECKOUT PAGE */}
-
-          {cartArray.map((item, id) => (
+          {Items.map((item, id) => (
             <div key={id} className="carted-image-container">
               <div className="image-and-name">
                 <img
@@ -45,16 +49,20 @@ const CheckoutPage = () => {
 
                 <div className="describe">
                   <h1>{item.name}</h1>
-                  <h1>Color:Blue,Red and Black</h1>
+                  <p>
+                    Color: <span>Blue,Red and Black</span>
+                  </p>
+                  <p>
+                    Size: <span>sm,md,lg and xl</span>
+                  </p>
                 </div>
               </div>
 
               <div className="price">
-                <h4>$244</h4>
+                <h4>{"$." + item.price}</h4>
               </div>
             </div>
           ))}
-
           {/*END OF CONTAINER FOR THE ADD TO CART IN CHECKOUT PAGE */}
         </div>
 
@@ -138,31 +146,42 @@ const CheckoutPage = () => {
             <h4>Pay With</h4>
 
             <div className="radio-button">
-              {/* first radio button */}
-              <div className="radio-button-click button1" onClick={firstRadio}>
-                <div className="inner-green"></div>
-              </div>
-              {/* end of first radio button */}
-              <div className="radio-check" onClick={secondRadio}>
-                <p>Debit or Credit Cardy</p>
-              </div>
-            </div>
-            <div className="radio-button">
-              {/* second radio button */}
-              <div className="radio-button-click button2">
-                <div className="inner-green"></div>
-              </div>
-              {/* end of second radio button */}
+              <div className="two-radio-button">
+                <div className="radio-button-clicker">
+                  <input
+                    type="radio"
+                    name="option"
+                    value="option1"
+                    checked={selectedOption === "option1"}
+                    onChange={handleOptionChange}
+                  />
 
-              <div className="radio-check">
-                <p>Pay on delivery</p>
+                  <div className="radio-check">
+                    <p>Debit or Credit Card</p>
+                  </div>
+                </div>
+
+                <div className="radio-button">
+                  <div className="radio-button-clicker">
+                    <input
+                      type="radio"
+                      name="option"
+                      value="option2"
+                      checked={selectedOption === "option2"}
+                      onChange={handleOptionChange}
+                    />
+
+                    <div className="radio-check">
+                      <p>Pay on delivery</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <div className="card-information">
             <h1>Card Information</h1>
-            {/* ///////input for card details */}
 
             <div className="card-input">
               <p>Card Holder</p>
@@ -202,8 +221,7 @@ const CheckoutPage = () => {
 
               <div className="card-input second-input">
                 <p>CVV</p>
-
-                <div className="last-name  inputer">
+                <div className="last-name inputer cvv-input">
                   <input type="text" name="" id="" placeholder="234" />
                   <IoLockClosedOutline />
                 </div>
@@ -213,17 +231,15 @@ const CheckoutPage = () => {
             <div className="tax-shpping">
               <div className="sub-total ">
                 <p>Sub Total</p>
-
-                <h2>$2115.00</h2>
+                <p>{"$." + totalPrice.toFixed(2)}</p>
               </div>
               <div className="tax">
                 <p>Tax (10%)</p>
-
-                <h2>$64.00</h2>
+                <p>{"$." + (0.1 * totalPrice).toFixed(2)}</p>
               </div>
               <div className="shiping">
                 <p>Shipping</p>
-                <h2>0</h2>
+                <p>0</p>
               </div>
             </div>
 

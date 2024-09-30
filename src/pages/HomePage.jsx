@@ -1,10 +1,16 @@
 import "../CSS/homepage.css";
+import { Link } from "react-router-dom";
+
+// image slider component
 import ImageSlider from "../components/ImageSlider";
+
+// features images
 import featureone from "../images/feature-1.png";
 import featuretwo from "../images/feature-2.png";
 import featurethree from "../images/feature-3.png";
 import featurefour from "../images/feature-4.png";
 
+// browsed images
 import browseone from "../images/browse1.png";
 import browsetwo from "../images/browse2.png";
 import browsethree from "../images/browse3.png";
@@ -12,54 +18,62 @@ import browsefour from "../images/browse4.png";
 import browsefive from "../images/browse5.png";
 import browsesix from "../images/browse6.png";
 
-import { CgShoppingCart } from "react-icons/cg";
-
+// array of products
 import cartItems from "../components/CartItems";
-import { RxCross2 } from "react-icons/rx";
 
+// ICONS
+import { CgShoppingCart } from "react-icons/cg";
+import { RxCross2 } from "react-icons/rx";
 import { HiPlus } from "react-icons/hi";
 import { HiMinusSmall } from "react-icons/hi2";
 import { HiOutlineTrash } from "react-icons/hi2";
 
+// CONTEXT-API AND useReducer
 import { useContext } from "react";
 import { AppContext } from "../components/AppProvider";
 
-import product from "../components/CartItems";
-
-import { Link } from "react-router-dom";
-
 const HomePage = () => {
- 
-
-  const { cartdropdown, setCartdropdown, cartArray, setCartArray } =
+  const { cartdropdown, setCartdropdown, cart, dispatch } =
     useContext(AppContext);
 
-  // FUNCTION TO REMOVE DROPDOWN
   const removeDropDown = () => {
     setCartdropdown(false);
   };
 
-  const handleclick = (e) => {
-    const addedProduct = e.target.id;
-    console.log(addedProduct);
-    const productObject = product.find(
-      (product) => product.name === addedProduct
-    );
-    console.log(productObject);
-    if (productObject) {
-      setCartArray([...cartArray, productObject]);
-    }
+  const scrollToHeight = () => {
+    window.scrollTo({
+      top: 1800,
+      behavior: "smooth",
+    });
   };
 
-  const deleteHandle = (e) => {
-    const number = e.target.id;
-    console.log(number);
-    const remainingProduct = cartArray.filter((product) => {
-      product.name !== number;
-    });
-    console.log(remainingProduct);
-    setCartArray(remainingProduct);
+  const handleclick = (e) => {
+    const ItemId = e.target.id;
+    dispatch({ type: "ADD_TO_CART", payload: ItemId });
   };
+
+  const removeItem = (e) => {
+    const removeItemId = e.target.id;
+    dispatch({ type: "REMOVE_FROM_CART", payload: removeItemId });
+  };
+
+  // destructuring Items from cart
+  const { Items } = cart;
+
+  const totalPrice = Items.reduce(
+    (accumulator, item) => accumulator + item.price,
+    0
+  );
+
+  // IMCREMENT AND DECREMENT FUNCTION FOR THE CART BUTTON
+  // const [counter, setCounter] = useState(1);
+  // const increment = () => {
+  //   setCounter(counter + 1);
+  // };
+
+  // const decrement = () => {
+  //   if (counter !== 1) setCounter(counter - 1);
+  // };
 
   return (
     <div className="homepage-container">
@@ -69,50 +83,72 @@ const HomePage = () => {
             <div className="value-and-cross">
               <div className="value-name">
                 <h3>My Cart</h3>
-                <div className="product-number">0</div>
+                <div className="product-number">{Items.length}</div>
               </div>
 
-              {/* CROSS TO REMOVE CART DROOP DOWN */}
               <div className="cross" onClick={removeDropDown}>
                 <RxCross2 />
               </div>
             </div>
 
-            {cartArray.map((item) => {
-              return (
-                <div className="item-name-increase" key={item.id}>
-                  <div className="image">
-                    <img src={item.image} alt="" className="the-image" />
-                  </div>
-                  <div className="name-increment">
-                    <h3>{item.name}</h3>
-                    <div className="increment">
-                      <HiPlus />
-                      <p>1</p>
-                      <HiMinusSmall />
+            {/* ////////////////// */}
+            {Items.length === 0 ? (
+              <h2 className="empty-cart">The Cart is Empty</h2>
+            ) : (
+              Items.map((theItem) => {
+                return (
+                  <div className="item-name-increase" key={theItem.id}>
+                    <div className="cart-image">
+                      <img src={theItem.image} alt="" className="the-image" />
+                    </div>
+
+                    <div className="name-increment-amount-container">
+                      <div className="name-increment">
+                        <h3>{theItem.name}</h3>
+                        <h4>{"$." + theItem.price}</h4>
+                      </div>
+
+
+
+
+                      {/* /////////////////////////////////// */}
+                      <div className="amount-and-delete">
+                        <div className="increment">
+                          <HiMinusSmall />
+                          <h5 className="increment-counter">1</h5>
+                          <HiPlus />
+                        </div>
+                        <div className="trash-icon">
+                          <HiOutlineTrash
+                            onClick={removeItem}
+                            id={theItem.id}
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="amount-and-delete">
-                    <h3>$144</h3>
-                    <HiOutlineTrash id={item.name} onClick={deleteHandle} />
-                  </div>
-                </div>
+                
+              
+              
               );
-            })}
+              })
+            )}
 
             <hr className="horizontal-line" />
             <div className="subtotal">
-              <p>Subtotal</p>
-              <h3>$0.00</h3>
+              <div className="subtotal-price">
+                <h3>Subtotal</h3>
+                <h3>{"$. " + totalPrice.toFixed(2)}</h3>
+              </div>
+
+              <Link to="/checkoutPage" className="checking-out">
+                <div className="buy-now-button">
+                  <h4>Check out</h4>
+                </div>
+              </Link>
             </div>
 
-            <hr className="horizontal-line" />
-
-            <Link to="/checkoutPage" className="checking-out">
-              <div className="buy-now-button">
-                <h4>Check out</h4>
-              </div>
-            </Link>
+            {/* <hr className="horizontal-line" /> */}
           </div>
         </div>
       ) : (
@@ -134,7 +170,7 @@ const HomePage = () => {
 
       <div className="hero-paragraph">
         <p>
-          At Nature's Bounty, we're committed to nurturing both people and the
+          At Nature Bounty, we are committed to nurturing both people and the
         </p>
         <p>
           planet. Dive into our world of eco-friendly products sourced with care
@@ -143,12 +179,11 @@ const HomePage = () => {
         <p>consideration for the environment.</p>
       </div>
 
-      <a href="#product-page" className="product-page-anchor">
-        <div className="hero-paragraph2">
-          <p>Discover Eco-Friendly Products</p>
-        </div>
-      </a>
-      {/* onClick={scrollToProduct} */}
+      {/* <a href="#product-page" className="product-page-anchor"> */}
+      <div className="hero-paragraph2" onClick={scrollToHeight}>
+        <p>Discover Eco-Friendly Products</p>
+      </div>
+      {/* </a> */}
 
       {/* IMAGE SLIDDER */}
       <ImageSlider />
@@ -210,37 +245,37 @@ const HomePage = () => {
       {/* END OF BROWSING THROUGH COLLECTION */}
 
       {/* POPULAR BEST SELLING PRODUTS */}
-      <div className="popular-container" id="product-page">
+      <div className="popular-container">
         <h1>Popular best selling products</h1>
 
         <p className="popular-paragraph">
           Browse through some of the most purchased eco-friendly products
         </p>
 
-        {/* ADD A GROW EFFECT TO THE CONTAINER */}
         <div className="popular-item">
           {cartItems.map((item, id) => (
             <div className="item" key={id}>
-              <img src={item.image} alt={item.name} className="item-image" />
-
+              <Link to={`/productpage/${item.id}`}>
+                <img src={item.image} alt={item.name} className="item-image" />
+              </Link>
               <div className="name-and-price">
                 <p className="item-name">{item.name}</p>
                 <h1 className="item-price">$124</h1>
               </div>
+
+              {/* ADD TO CART BUTTON */}
               <div className="cart-and-love">
-                <div
-                  className="cart-button"
-                  onClick={handleclick}
-                  id={item.name}>
+                <div className="cart-button" onClick={handleclick} id={item.id}>
                   Add to cart
                   <CgShoppingCart className="cart-icon" />
                 </div>
               </div>
+
+              {/* END DOF ADD TO CART BUTTON */}
             </div>
           ))}
         </div>
       </div>
-
       {/*END OF POPULAR BEST SELLING PRODUTS */}
     </div>
   );

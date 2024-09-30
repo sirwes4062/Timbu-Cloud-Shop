@@ -130,6 +130,24 @@ li {
   flex-direction: column;
 }
 
+.cart-icon-and-counter {
+  position: relative;
+}
+
+.cart-item-counter {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00522a;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 1.3em;
+}
+
 .right-list-icon {
   font-size: 1.5em;
   margin-bottom: 0.3em;
@@ -214,8 +232,6 @@ li {
     margin-right: 1em;
     margin-left: 1em;
   }
-
-  /* //////////// */
   .input-search {
     background-color: #f0e0d0;
     outline: none;

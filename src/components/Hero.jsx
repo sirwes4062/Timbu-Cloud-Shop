@@ -1,5 +1,6 @@
 import CheckoutPage from "../pages/CheckoutPage";
 import HomePage from "../pages/HomePage";
+import ProductPage from "../pages/ProductPage";
 
 import {
   Route,
@@ -21,12 +22,20 @@ const Layout = () => {
   );
 };
 
+// const {productId} = useparams()
+
 const Hero = () => {
   const routes = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/checkoutpage" element={<CheckoutPage />} />
+
+        {/* adding an internal route to product page that sends the id to the query strings */}
+        <Route path="/productpage" element={<ProductPage />}>
+          <Route path=":productId" element={<productPage />} />
+          {/* <Route path={`/productpage/${props.id}`} element={<productPage />} /> */}
+        </Route>
       </Route>
     )
   );

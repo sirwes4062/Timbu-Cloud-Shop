@@ -12,8 +12,12 @@
   gap: 0.2em;
 }
 
+.home-paragraph p {
+  font-weight: 600;
+}
+
 .home-paragraph span {
-  font-weight: bold;
+  font-size: larger;
 }
 
 .check {
@@ -23,7 +27,6 @@
 
 .summary {
   border: 1.5px solid #ddc596;
-
   border-radius: 10px;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -65,7 +68,6 @@
   align-items: center;
   border: 1px solid #ddc596;
   border-radius: 5px;
-  /* margin: auto; */
   margin-bottom: 1em;
 }
 
@@ -125,10 +127,12 @@ form p {
   border-radius: 15px;
   padding: 2em;
   margin-top: 2.5em;
+  height: fit-content;
 }
 
-.payment-info h1 {
+.payment-info h4 {
   font-size: 1.2em;
+  margin-top: 2rem;
 }
 
 .card-details {
@@ -138,22 +142,30 @@ form p {
 
 .radio-button {
   display: flex;
-  margin: 1em 0;
+  margin-bottom: 2rem;
 }
 
 .radio-check {
-  height: 100%;
   display: flex;
   align-items: center;
   font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.radio-button-clicker {
+  display: flex;
 }
 
 .radio-click {
   width: 100%;
   height: 8em;
-  border-top: 1px solid #e4e7ec;
-  border-bottom: 1px solid #e4e7ec;
+  border-top: 1px solid #bccdf0;
+  border-bottom: 1px solid #bccdf0;
   margin: 2em 0;
+}
+
+.radio-click h4 {
+  margin-bottom: 1rem;
 }
 
 .number-cart {
@@ -168,45 +180,44 @@ form p {
   align-items: center;
 }
 
-.radio-button-click {
-  width: 1.5em;
-  height: 1.5em;
-  border-radius: 50%;
-  background-color: white;
-  border: #d0d5dd;
-  margin-right: 0.5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.inner-green {
-  width: 0.6em;
-  height: 0.6em;
-  border-radius: 50%;
-  background-color: #00522a;
-}
-
 .card-input p {
   font-size: 0.8em;
   font-weight: 500;
 }
 
-/* stylink for cart */
 .carted-image {
-  width: 3em;
-  height: 3em;
-  border-radius: 0;
+  width: 6em;
+  height: 6em;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+}
+
+.radio-button-clicker {
+  margin-right: 1em;
 }
 
 .describe {
-  margin-bottom: 1em;
-  height: 100%;
-  margin-bottom: 1.5em;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  height: 100%;
+  gap: 5px;
 }
+
+.describe h1 {
+  color: #1d0e00;
+  font-size: 1.4rem;
+}
+
+.describe p {
+  font-weight: 500;
+}
+
+.describe p span {
+  font-weight: 600;
+}
+
 .image-and-name {
   display: flex;
 }
@@ -220,15 +231,12 @@ form p {
   font-weight: 500;
 }
 
-.describe h1 {
-  font-size: 0.8em;
-}
-
 .carted-image-container {
   display: flex;
   width: 100%;
-
   justify-content: space-between;
+  border-bottom: 1px solid #ddc596;
+  margin-bottom: 1em;
 }
 
 .inputer input {
@@ -236,6 +244,10 @@ form p {
   height: 100%;
   outline: none;
   border: none;
+}
+
+.cvv-input input::placeholder {
+  padding-left: 0.5rem;
 }
 
 .two-input {
@@ -256,8 +268,8 @@ form p {
   font-size: 0.7rem;
   margin-top: 0.5em;
   margin-bottom: 1em;
-  border-top: 1px solid #e4e7ec;
-  border-bottom: 1px solid #e4e7ec;
+  border-top: 1px solid #bccdf0;
+  border-bottom: 1px solid #bccdf0;
 }
 
 .sub-total,
@@ -271,14 +283,27 @@ form p {
   align-items: center;
 }
 
-.sub-total h2 {
+.sub-total p {
   font-size: 1em;
+  font-weight: 500;
 }
-.tax h2 {
+.tax p {
   font-size: 1em;
+  font-weight: 500;
 }
-.shiping h2 {
+.shiping p {
   font-size: 1em;
+  font-weight: 500;
+}
+
+.sub-total p {
+  font-size: 1rem;
+}
+.tax p {
+  font-size: 1rem;
+}
+.shiping p {
+  font-size: 1rem;
 }
 
 .buybutton {
