@@ -60,26 +60,10 @@ const HomePage = () => {
   // destructuring Items from cart
   const { Items } = cart;
 
-  // const totalPrice = Items.reduce(
-  //   (accumulator, item) => accumulator + item.price,
-  //   0
-  // );
-
-
-  const totalPrice = (Items && Items.length > 0) 
-  ? Items.reduce((accumulator, item) => accumulator + item.price, 0)
-  : 0;
-
-
-  // IMCREMENT AND DECREMENT FUNCTION FOR THE CART BUTTON
-  // const [counter, setCounter] = useState(1);
-  // const increment = () => {
-  //   setCounter(counter + 1);
-  // };
-
-  // const decrement = () => {
-  //   if (counter !== 1) setCounter(counter - 1);
-  // };
+  const totalPrice =
+    Items && Items.length > 0
+      ? Items.reduce((accumulator, item) => accumulator + item.price, 0)
+      : 0;
 
   return (
     <div className="homepage-container">
@@ -89,7 +73,9 @@ const HomePage = () => {
             <div className="value-and-cross">
               <div className="value-name">
                 <h3>My Cart</h3>
-                <div className="product-number">{Items.length}</div>
+                <div className="product-number">
+                  {Array.isArray(Items) ? Items.length : 0}
+                </div>
               </div>
 
               <div className="cross" onClick={removeDropDown}>
