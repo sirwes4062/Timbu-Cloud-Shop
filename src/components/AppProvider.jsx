@@ -14,8 +14,8 @@ const AppProvider = ({ children }) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  const cartLength = Array.isArray(cart) ? cart.length : 0;
-  console.log("Cart Length:", cartLength);
+  // const cartLength = Array.isArray(cart) ? cart.length : 0;
+  // console.log("Cart Length:", cartLength);
 
   const [cartdropdown, setCartdropdown] = useState(false);
   const [clickedItem, setclickedItem] = useState({});

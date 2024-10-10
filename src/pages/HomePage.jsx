@@ -32,6 +32,9 @@ import { HiOutlineTrash } from "react-icons/hi2";
 import { useContext } from "react";
 import { AppContext } from "../components/AppProvider";
 
+// const cartLength = Array.isArray(cart) ? cart.length : 0;
+// console.log("Cart Length:", cartLength);
+
 const HomePage = () => {
   const { cartdropdown, setCartdropdown, cart, dispatch } =
     useContext(AppContext);
@@ -73,7 +76,9 @@ const HomePage = () => {
             <div className="value-and-cross">
               <div className="value-name">
                 <h3>My Cart</h3>
-                <div className="product-number">{Items.length}</div>
+                <div className="product-number">
+                  {Array.isArray(Items) && Items.length === 0}
+                </div>
               </div>
 
               <div className="cross" onClick={removeDropDown}>
@@ -81,9 +86,10 @@ const HomePage = () => {
               </div>
             </div>
 
-            {Items.length === 0 ? (
+            {Array.isArray(Items) && Items.length === 0 ? (
               <h2 className="empty-cart">The Cart is Empty</h2>
             ) : (
+              Array.isArray(Items) &&
               Items.map((theItem) => {
                 return (
                   <div className="item-name-increase" key={theItem.id}>
@@ -120,7 +126,8 @@ const HomePage = () => {
             <div className="subtotal">
               <div className="subtotal-price">
                 <h3>Subtotal</h3>
-                <h3>{"$. " + totalPrice.toFixed(2)}</h3>
+                {/* <h3>{"$. " + totalPrice.toFixed(2)}</h3> */}
+                <h3>{totalPrice}</h3>
               </div>
 
               <Link to="/checkoutPage" className="checking-out">
