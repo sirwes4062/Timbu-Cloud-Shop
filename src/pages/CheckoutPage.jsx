@@ -16,9 +16,14 @@ const CheckoutPage = () => {
   const { cart } = useContext(AppContext);
   const { Items } = cart;
 
-  const totalPrice = Items.reduce(
-    (accumulator, item) => accumulator + item.price
-  );
+  // const totalPrice = Items.reduce(
+  //   (accumulator, item) => accumulator + item.price
+  // );
+
+  const totalPrice =
+    Items && Items.length > 0
+      ? Items.reduce((accumulator, item) => accumulator + item.price, 0)
+      : 0;
 
   return (
     <div className="Checkout-Container">
