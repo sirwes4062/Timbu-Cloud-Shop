@@ -16,10 +16,9 @@ const CheckoutPage = () => {
   const { cart } = useContext(AppContext);
   const { Items } = cart;
 
-  // const totalPrice = Items.reduce(
-  //   (accumulator, item) => accumulator + item.price,
-  //   0
-  // );
+  const totalPrice = Items.reduce(
+    (accumulator, item) => accumulator + item.price
+  );
 
   return (
     <div className="Checkout-Container">
@@ -229,14 +228,14 @@ const CheckoutPage = () => {
             </div>
 
             <div className="tax-shpping">
-              {/* <div className="sub-total ">
+              <div className="sub-total ">
                 <p>Sub Total</p>
                 <p>{"$." + totalPrice.toFixed(2)}</p>
               </div>
               <div className="tax">
                 <p>Tax (10%)</p>
                 <p>{"$." + (0.1 * totalPrice).toFixed(2)}</p>
-              </div> */}
+              </div>
               <div className="shiping">
                 <p>Shipping</p>
                 <p>0</p>

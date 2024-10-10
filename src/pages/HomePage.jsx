@@ -60,12 +60,10 @@ const HomePage = () => {
   // destructuring Items from cart
   const { Items } = cart;
 
-
-  // const Items = undefined;
-  // const totalPrice = Items.reduce(
-  //   (accumulator, item) => accumulator + item.price,
-  //   0
-  // );
+  const totalPrice = Items.reduce(
+    (accumulator, item) => accumulator + item.price,
+    0
+  );
 
   // IMCREMENT AND DECREMENT FUNCTION FOR THE CART BUTTON
   // const [counter, setCounter] = useState(1);
@@ -132,8 +130,7 @@ const HomePage = () => {
             <div className="subtotal">
               <div className="subtotal-price">
                 <h3>Subtotal</h3>
-                {/* <h3>{"$. " + totalPrice.toFixed(2)}</h3> */}
-                <h3>$. 542</h3>
+                <h3>{"$. " + totalPrice.toFixed(2)}</h3>
               </div>
 
               <Link to="/checkoutPage" className="checking-out">
@@ -142,8 +139,6 @@ const HomePage = () => {
                 </div>
               </Link>
             </div>
-
-            {/* <hr className="horizontal-line" /> */}
           </div>
         </div>
       ) : (
