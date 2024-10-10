@@ -76,7 +76,7 @@ const HomePage = () => {
             <div className="value-and-cross">
               <div className="value-name">
                 <h3>My Cart</h3>
-                <div className="product-number">{Items.length}</div>
+                <div className="product-number">{Array.isArray(Items) ? Items.length : 0}</div>
               </div>
 
               <div className="cross" onClick={removeDropDown}>
