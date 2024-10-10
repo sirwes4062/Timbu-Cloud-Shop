@@ -6,15 +6,16 @@ import { cartReducer } from "./cartReducer";
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
-  // const initialCart = JSON.parse(localStorage.getItem("cart")) || [];
   const initialCart = JSON.parse(localStorage.getItem("cart")) || { Items: [] };
-
 
   const [cart, dispatch] = useReducer(cartReducer, initialCart);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
+
+  const cartLength = Array.isArray(cart) ? cart.length : 0;
+  console.log("Cart Length:", cartLength);
 
   const [cartdropdown, setCartdropdown] = useState(false);
   const [clickedItem, setclickedItem] = useState({});

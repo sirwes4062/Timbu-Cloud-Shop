@@ -72,7 +72,7 @@ const Navbar = () => {
               onClick={cartToggle}>
               <CgShoppingCart className="right-list-icon" />
               <div className="cart-item-counter">
-                <h6>{Array.isArray(Items) ? Items.length : 0}</h6>
+                <h6>{Items.length}</h6>
               </div>
             </div>
           </div>
