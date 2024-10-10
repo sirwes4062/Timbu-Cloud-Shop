@@ -19,9 +19,13 @@ const Navbar = () => {
       behavior: "smooth",
     });
   };
+ 
 
   // destructuring Items from cart
-  const { Items } = cart;
+  // const { Items } = cart;
+  const Items = cart?.Items || [];
+
+
 
   return (
     <div>
