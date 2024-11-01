@@ -6,7 +6,6 @@ import { useContext } from "react";
 import { AppContext } from "../components/AppProvider";
 
 const CheckoutPage = () => {
-  // RADIO-BUTTON CHECKING OPTIONS
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleOptionChange = (e) => {

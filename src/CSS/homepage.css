@@ -29,7 +29,6 @@ li {
   z-index: 100;
 }
 
-/* //////////////////////// */
 .cart-container {
   position: absolute;
   width: 35%;
@@ -37,7 +36,6 @@ li {
   padding: 2em 2em;
   z-index: 10000;
 }
-/* //////////////// */
 
 .checking-out {
   text-decoration: none;
@@ -394,7 +392,6 @@ li {
   width: 100%;
   display: flex;
   margin-top: 0.5rem;
-  border-bottom: 1px solid #ddc596;
 }
 .subtotal {
   width: 100%;

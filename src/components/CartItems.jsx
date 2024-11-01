@@ -1,4 +1,3 @@
-// IMAGES
 import one from "../images/one.png";
 import two from "../images/two.png";
 import three from "../images/three.png";
@@ -23,7 +22,7 @@ const cartItems = [
     image: one,
     description: "A comfortable and eco-friendly chair made from bamboo.",
     price: 79.55,
-    testing: 1,
+    quantity: 1,
   },
   {
     id: 2,
@@ -31,7 +30,7 @@ const cartItems = [
     image: two,
     description: "A sturdy basket perfect for carrying your organic produce.",
     price: 29.56,
-    testing: 2,
+    quantity: 1,
   },
   {
     id: 3,
@@ -39,6 +38,7 @@ const cartItems = [
     image: three,
     description: "An all-natural cleaning kit for a sparkling clean home.",
     price: 49.99,
+    quantity: 1,
   },
   {
     id: 4,
@@ -47,6 +47,7 @@ const cartItems = [
     description:
       "A luxurious spa collection made with pure, natural ingredients.",
     price: 99.22,
+    quantity: 1,
   },
   {
     id: 5,
@@ -54,6 +55,7 @@ const cartItems = [
     image: five,
     description: "A comfortable roundneck shirt made from organic cotton.",
     price: 19.47,
+    quantity: 1,
   },
   {
     id: 6,
@@ -61,6 +63,7 @@ const cartItems = [
     image: six,
     description: "A stylish and eco-friendly reusable water bottle.",
     price: 14.12,
+    quantity: 1,
   },
   {
     id: 7,
@@ -69,6 +72,7 @@ const cartItems = [
     description:
       "A set of biodegradable packaging for a sustainable lifestyle.",
     price: 24.0,
+    quantity: 1,
   },
   {
     id: 8,
@@ -77,6 +81,7 @@ const cartItems = [
     description:
       "A beautifully scented candle made from eco-friendly materials.",
     price: 12.99,
+    quantity: 1,
   },
   {
     id: 9,
@@ -84,6 +89,7 @@ const cartItems = [
     image: nine,
     description: "A set of cutlery made from sustainable wood.",
     price: 9.99,
+    quantity: 1,
   },
   {
     id: 10,
@@ -91,6 +97,7 @@ const cartItems = [
     image: ten,
     description: "An eco-friendly water bottle designed for sustainability.",
     price: 14.99,
+    quantity: 1,
   },
   {
     id: 11,
@@ -98,6 +105,7 @@ const cartItems = [
     image: eleven,
     description: "A powerful and eco-friendly spot remover.",
     price: 7.99,
+    quantity: 1,
   },
   {
     id: 12,
@@ -106,6 +114,7 @@ const cartItems = [
     description:
       "A sunscreen made from natural ingredients, perfect for sensitive skin.",
     price: 16.99,
+    quantity: 1,
   },
   {
     id: 13,
@@ -114,6 +123,7 @@ const cartItems = [
     description:
       "A shaving stick that is both effective and environmentally friendly.",
     price: 8.99,
+    quantity: 1,
   },
   {
     id: 14,
@@ -121,6 +131,7 @@ const cartItems = [
     image: fourteen,
     description: "A nourishing body lotion made from natural ingredients.",
     price: 11.99,
+    quantity: 1,
   },
   {
     id: 15,
@@ -129,6 +140,7 @@ const cartItems = [
     description:
       "An air humidifier that improves air quality while being eco-friendly.",
     price: 34.99,
+    quantity: 1,
   },
   {
     id: 16,
@@ -137,6 +149,7 @@ const cartItems = [
     description:
       "A toothbrush made from bamboo, perfect for sustainable oral care.",
     price: 3.99,
+    quantity: 1,
   },
 ];
 

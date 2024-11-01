@@ -1,5 +1,7 @@
 import "../CSS/homepage.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AppContext } from "../components/AppProvider";
 
 // image slider component
 import ImageSlider from "../components/ImageSlider";
@@ -28,13 +30,6 @@ import { HiPlus } from "react-icons/hi";
 import { HiMinusSmall } from "react-icons/hi2";
 import { HiOutlineTrash } from "react-icons/hi2";
 
-// CONTEXT-API AND useReducer
-import { useContext } from "react";
-import { AppContext } from "../components/AppProvider";
-
-// const cartLength = Array.isArray(cart) ? cart.length : 0;
-// console.log("Cart Length:", cartLength);
-
 const HomePage = () => {
   const { cartdropdown, setCartdropdown, cart, dispatch } =
     useContext(AppContext);
@@ -60,7 +55,6 @@ const HomePage = () => {
     dispatch({ type: "REMOVE_FROM_CART", payload: removeItemId });
   };
 
-  // destructuring Items from cart
   const { Items } = cart;
 
   const totalPrice =
@@ -68,15 +62,34 @@ const HomePage = () => {
       ? Items.reduce((accumulator, item) => accumulator + item.price, 0)
       : 0;
 
+  const incrementQuantity = (id) => {
+    dispatch({
+      type: "INCREMENT_QUANTITY",
+      payload: { id },
+    });
+    console.log(id);
+  };
+
+  const decrementQuantity = (id) => {
+    dispatch({
+      type: "DECREMENT_QUANTITY",
+      payload: { id },
+    });
+    console.log(id);
+  };
+
   return (
     <div className="homepage-container">
       {cartdropdown ? (
+        //CART CONTAINER
         <div className="overlay-container">
           <div className="cart-container">
             <div className="value-and-cross">
               <div className="value-name">
                 <h3>My Cart</h3>
-                <div className="product-number">{Array.isArray(Items) ? Items.length : 0}</div>
+                <div className="product-number">
+                  {Array.isArray(Items) ? Items.length : 0}
+                </div>
               </div>
 
               <div className="cross" onClick={removeDropDown}>
@@ -103,9 +116,19 @@ const HomePage = () => {
 
                       <div className="amount-and-delete">
                         <div className="increment">
-                          <HiMinusSmall />
-                          <h5 className="increment-counter">1</h5>
-                          <HiPlus />
+                          <HiMinusSmall
+                            onClick={() => {
+                              decrementQuantity(theItem.id);
+                            }}
+                          />
+                          <h4 className="increment-counter">
+                            {theItem.quantity}
+                          </h4>
+                          <HiPlus
+                            onClick={() => {
+                              incrementQuantity(theItem.id);
+                            }}
+                          />
                         </div>
                         <div className="trash-icon">
                           <HiOutlineTrash
@@ -124,8 +147,7 @@ const HomePage = () => {
             <div className="subtotal">
               <div className="subtotal-price">
                 <h3>Subtotal</h3>
-                {/* <h3>{"$. " + totalPrice.toFixed(2)}</h3> */}
-                <h3>{totalPrice}</h3>
+                <h3>{"$. " + totalPrice.toFixed(2)}</h3>
               </div>
 
               <Link to="/checkoutPage" className="checking-out">
@@ -137,6 +159,7 @@ const HomePage = () => {
           </div>
         </div>
       ) : (
+        //END OF CART CONTAINER
         ""
       )}
 
@@ -164,11 +187,9 @@ const HomePage = () => {
         <p>consideration for the environment.</p>
       </div>
 
-      {/* <a href="#product-page" className="product-page-anchor"> */}
       <div className="hero-paragraph2" onClick={scrollToHeight}>
         <p>Discover Eco-Friendly Products</p>
       </div>
-      {/* </a> */}
 
       {/* IMAGE SLIDDER */}
       <ImageSlider />

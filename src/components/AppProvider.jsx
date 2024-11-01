@@ -14,22 +14,14 @@ const AppProvider = ({ children }) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // const cartLength = Array.isArray(cart) ? cart.length : 0;
-  // console.log("Cart Length:", cartLength);
-
   const [cartdropdown, setCartdropdown] = useState(false);
   const [clickedItem, setclickedItem] = useState({});
-
-  // Items in the cart array
-  const [Items, setItems] = useState([]);
 
   return (
     <AppContext.Provider
       value={{
         cart,
         dispatch,
-        Items,
-        setItems,
         cartdropdown,
         setCartdropdown,
         clickedItem,
