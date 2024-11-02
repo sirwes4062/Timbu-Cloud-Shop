@@ -29,6 +29,8 @@ import { RxCross2 } from "react-icons/rx";
 import { HiPlus } from "react-icons/hi";
 import { HiMinusSmall } from "react-icons/hi2";
 import { HiOutlineTrash } from "react-icons/hi2";
+// for added cart
+// import { FaCartArrowDown } from "react-icons/fa";
 
 const HomePage = () => {
   const { cartdropdown, setCartdropdown, cart, dispatch } =

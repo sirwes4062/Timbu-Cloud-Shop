@@ -226,7 +226,7 @@ li {
 
 @media (max-width: 640px) {
   .navbar {
-    padding: 0.5em 0.3em;
+    padding: 0.5em 1em;
   }
   .home {
     margin-right: 1em;

@@ -35,9 +35,11 @@ const ProductPage = () => {
     <div className="ProductContainer">
       <div className="clicked-product-images">
         <div className="category">
-          <p className="others">Items</p>
-          <span>/</span>
-          <p className="category-item">{newClicked.name}</p>
+          <h3 className="others">Items</h3>
+          <span>
+            <h3>/</h3>
+          </span>
+          <h3 className="category-item">{newClicked.name}</h3>
         </div>
 
         <div className="bigger-image">
