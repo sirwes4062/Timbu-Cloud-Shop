@@ -59,7 +59,10 @@ const HomePage = () => {
 
   const totalPrice =
     Items && Items.length > 0
-      ? Items.reduce((accumulator, item) => accumulator + item.price, 0)
+      ? Items.reduce(
+          (accumulator, item) => accumulator + item.price * item.quantity,
+          0
+        )
       : 0;
 
   const incrementQuantity = (id) => {
@@ -111,7 +114,9 @@ const HomePage = () => {
                     <div className="name-increment-amount-container">
                       <div className="name-increment">
                         <h3>{theItem.name}</h3>
-                        <h4>{"$." + theItem.price}</h4>
+                        <h4>
+                          {"$." + (theItem.price * theItem.quantity).toFixed(2)}
+                        </h4>
                       </div>
 
                       <div className="amount-and-delete">

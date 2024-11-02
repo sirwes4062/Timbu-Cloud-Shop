@@ -17,7 +17,10 @@ const CheckoutPage = () => {
 
   const totalPrice =
     Items && Items.length > 0
-      ? Items.reduce((accumulator, item) => accumulator + item.price, 0)
+      ? Items.reduce(
+          (accumulator, item) => accumulator + item.price * item.quantity,
+          0
+        )
       : 0;
 
   return (
@@ -58,7 +61,7 @@ const CheckoutPage = () => {
               </div>
 
               <div className="price">
-                <h4>{"$." + item.price}</h4>
+                <h4>{"$." + (item.price * item.quantity).toFixed(2)}</h4>
               </div>
             </div>
           ))}
